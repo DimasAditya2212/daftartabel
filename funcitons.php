@@ -32,4 +32,27 @@ function hapus($data){
     header("location: admin.php");
 }
 
+function ubah($data){
+    global $conn;
+
+    $npmtambah = htmlspecialchars($data["npm"]);
+    $namatambah = htmlspecialchars($data["nama"]);
+    $kelastambah = htmlspecialchars($data["kelas"]);
+    $emailtambah = htmlspecialchars($data["email"]);
+    $nilaitambah = htmlspecialchars($data["nilai"]);
+
+    $mengubah ="UPDATE 3db01 SET 
+            Npm = '$npmtambah',
+            Nama = '$namatambah',
+            Kelas = '$kelastambah',
+            Email = '$emailtambah',
+            Nilai = '$nilaitambah'
+
+            WHERE Nama = '$namatambah'
+    ";
+    mysqli_query($conn, $mengubah);
+
+    return mysqli_affected_rows($conn);
+}
+
 ?>
