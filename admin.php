@@ -28,8 +28,8 @@ $mahasiswa = query("SELECT * FROM 3db01")
         <tr>
             <td><?= $mhs["Npm"];  ?></td>
             <td>
-                <a href="">Ubah</a>
-                <a href="">Hapus</a>
+                <a href="ubah1.php?npm=<?=$mhs['Npm']; ?>">Ubah</a>
+                <a href="hapus.php?npm=<?=$mhs['Npm']; ?>">Hapus</a>
             </td>
             <td><?= $mhs["Nama"];  ?></td>
             <td><?= $mhs["Kelas"];  ?></td>
@@ -38,7 +38,7 @@ $mahasiswa = query("SELECT * FROM 3db01")
         </tr>
         <?php endforeach; ?>
         </table>
-        <a href="mau tambah tabel?"></a>
+        <a href="tambah.php">mau tambah tabel?</a>
         
         <script src="" async defer></script>
     </body>
