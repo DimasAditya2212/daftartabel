@@ -55,4 +55,15 @@ function ubah($data){
     return mysqli_affected_rows($conn);
 }
 
+function cari($data){
+    $hasilcarifungsi = "SELECT * FROM 3db01 
+                WHERE
+                Npm LIKE '%$data%' OR
+                Nama LIKE '%$data%' OR
+                Kelas LIKE '%$data%' OR
+                Email LIKE '%$data%' OR
+                Nilai LIKE '%$data%'
+                ";
+    return query($hasilcarifungsi);
+}
 ?>

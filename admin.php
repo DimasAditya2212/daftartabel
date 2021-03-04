@@ -2,7 +2,11 @@
 <?php 
 require 'funcitons.php';
 
-$mahasiswa = query("SELECT * FROM 3db01")
+$mahasiswa = query("SELECT * FROM 3db01");
+if(isset($_POST["cari"])){
+    $mahasiswa = cari($_POST["cari_isi"]);
+}
+
 ?>
 <html>
     <head>
@@ -15,6 +19,12 @@ $mahasiswa = query("SELECT * FROM 3db01")
     </head>
     <body>
         <h1>Daftar Mahasiswa Kelas 3db01</h1>
+
+        <form action="" method="post">
+        <input type="text" name="cari_isi" size="30">
+        <button type="submit" name="cari">Cari</button>
+        </form>
+        <br>
         <table border="1" cellspacing="0" cellpadding="15">
         <tr>
             <th>Npm</th>
